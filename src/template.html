@@ -8,6 +8,79 @@
     <title>Todo List</title>
 </head>
 <body>
-    
+    <div class="content-container">
+        <header class="header">
+            <nav class="header-nav">
+                <h1 class="header-title">Todo List</h1>
+                <h2 class="header-nav-title">Home</h2>
+                <ul class="header-nav-list" id="home-list">
+                    <li class="header-nav-item">
+                        <a class="header-home-item-link" href="javascript:void(0);">
+                            <img src="images/inbox.svg" alt="inbox icon">
+                            Inbox
+                        </a>
+                    </li>
+                    <li class="header-nav-item">
+                        <a class="header-home-item-link" href="javascript:void(0);">
+                            <img src="images/calendar-today.svg" alt="today icon">
+                            Today
+                        </a>
+                    </li>
+                    <li class="header-nav-item">
+                        <a class="header-home-item-link" href="javascript:void(0);">
+                            <img src="images/calendar-month-outline.svg" alt="Upcoming icon">
+                            Upcoming
+                        </a>
+                    </li>
+                    <li class="header-nav-item">
+                        <a class="header-home-item-link" href="javascript:void(0);">
+                            <img src="images/check.svg" alt="check icon">
+                            Completed
+                        </a>
+                    </li>
+                    <li class="header-nav-item">
+                        <a class="header-home-item-link" href="javascript:void(0);">
+                            <img src="images/delete.svg" alt="trash icon">
+                            Trash
+                        </a>
+                    </li>
+                </ul>
+
+                <h2 class="header-nav-title">Projects</h2>
+                <ul class="header-nav-list" id="projects-list">
+                    <li class="header-nav-item">
+                        <a class="header-projects-item-link" href="javascript:void(0);">
+                            <img src="images/chevron-right.svg" alt="arrow right icon">
+                            Demo Project
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main">
+            <header class="mobile-header">
+                <button class="mobile-nav-btn">
+                    <img src="images/menu.svg" alt="burger icon">
+                </button>
+                <h1 class="mobile-nav-title">Todo List</h1>
+            </header>
+            <div class="main-container"></div>
+        </main>
+
+        <div class="model display-none">
+            <form class="model-form">
+                <fieldset class="model-form-fieldset"></fieldset>
+                <button class="model-form-submit">Submit</button>
+                <button class="model-form-close">
+                    <img src="images/close.svg" alt="close icon">
+                </button>
+            </form>
+        </div>
+
+        <footer class="footer">
+
+        </footer>
+    </div>
 </body>
 </html>
