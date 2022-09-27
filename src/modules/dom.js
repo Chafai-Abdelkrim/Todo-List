@@ -56,3 +56,19 @@ const createNavItem = (className, projectName) => {
     return li;
 }
 
+const createTodoCard = (todo) => {
+    const currentPage = document.querySelector('.main-container').getAttribute('data-id');
+    const todoContainer = document.querySelector('.todo-container');
+    const container = createDiv('todo-card');
+    const checkbox = createCheckbox('todo-card-input');
+    const title = createPara('todo-card-title');
+    const date = createPara('todo-card-date');
+    const editBtn = createBtn('todo-card-edit');
+    const deleteBtn = createBtn('todo-card-delete');
+    const btnContainer = createDiv('tpdp-card-container');
+
+    checkbox.checked = todo.checked;
+    checkbox.addEventListener('click', () => updateStatus(todo.index, checkbox.checked));
+    title.innerText = todo.title;
+    date.innerText = format(new Date(todo.date), 'dd/MM/y');
+}
