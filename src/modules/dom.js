@@ -1,6 +1,7 @@
 import { format, isPast, add, addDays } from "date-fns";
 import { todos, updateStatus, restoreTodo } from "./todos";
 import { openEditModal } from "./modal";
+import { removeProject, restoreProject } from "./projects";
 
 const createDiv = (className) => {
     const div = document.createElement("div");
@@ -169,3 +170,8 @@ const createProjectCard = (project, index) => {
     container.append(title, btnContainer);
     projectContainer.append(container);
 };
+
+
+
+
+export { createProjectCard, createNavItem }

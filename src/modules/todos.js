@@ -28,10 +28,25 @@ const updateStatus = (index, value) => {
     todos[index].checked = value;
 }
 
+const  removeAllProjectTodos = (project) => {
+    let i = todos.length;
+    while (i--) {
+        const todo = todos[i];
+        if (todo.type == project.id) todos.splice(todo.index, 1);
+    }
+    renderTodos();
+};
+
+const updateAllProjectTodos = (project) => {
+    todos.forEach( todo => {
+        if (todo.type == project.id) todo.isTrash = true;
+    });
+};
+
 const restoreTodo = (todo) => {
     if (typeof parseInt(todo.type) === 'number' ) {restoreProject(projects[parseInt(todo.type)])};
     todos[todo.index].isTrash = false;
     renderTodos();
 }
 
-export { todos, updateStatus, editTodo, restoreTodo}
+export { todos, updateStatus, editTodo, restoreTodo, removeAllProjectTodos, updateAllProjectTodos}
