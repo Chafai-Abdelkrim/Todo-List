@@ -58,6 +58,40 @@ const createNavItem = (className, projectName) => {
     return li;
 };
 
+const createLegend = (className) => {
+    const legend = document.createElement('legend');
+    legend.classList.add(className);
+    
+    return legend;
+};
+
+const createLabel = (className) => {
+    const label = document.createElement('label');
+    label.classList.add(`${className}-label`);
+    label.setAttribute('for', `${className}-input`);
+
+    return label;
+};
+
+const createInput = (className, inputType) => {
+    const input = document.createElement('input');
+    input.classList.add(`${className}-input`);
+    input.setAttribute('type', inputType);
+    input.setAttribute('id', `${className}-input`);
+    input.setAttribute('name', `${className}-input`);
+
+    return input;
+};
+
+const createTextarea = (className) => {
+    const textarea = document.createElement('textarea');
+    textarea.classList.add(`${className}-input`);
+    textarea.setAttribute('id', `${className}-input`);
+    textarea.setAttribute('name', `${className}-input`);
+
+    return textarea;
+};
+
 const createTodoCard = (todo) => {
     const currentPage = document.querySelector('.main-container').getAttribute('data-id');
     const todoContainer = document.querySelector('.todo-container');
@@ -67,7 +101,7 @@ const createTodoCard = (todo) => {
     const date = createPara('todo-card-date');
     const editBtn = createBtn('todo-card-edit');
     const deleteBtn = createBtn('todo-card-delete');
-    const btnContainer = createDiv('tpdp-card-container');
+    const btnContainer = createDiv('todo-card-container');
 
     checkbox.checked = todo.checked;
     checkbox.addEventListener('click', () => updateStatus(todo.index, checkbox.checked));
@@ -114,4 +148,24 @@ const createTodoCard = (todo) => {
 
     container.append(checkbox, title, date, btnContainer);
     todoContainer.append(container);
+};
+
+const createProjectCard = (project, index) => {
+    const projectContainer = document.querySelector('.project-container');
+    const container = createDiv('project-card');
+    const title = createPara('project-card-title');
+    const deleteBtn = createBtn('project-card-delete');
+    const restoreBtn = createBtn('project-card-restore');
+    const btnContainer = createDiv('project-card-container');
+
+    title.innerText = project.title;
+
+    deleteBtn.append(createIcon('delete'));
+    deleteBtn.addEventListener('click', () => removeProject(project, index));
+    restoreBtn.append(createIcon('restore'));
+    restoreBtn.addEventListener('click', () => restoreProject(project));
+    btnContainer.append(restoreBtn, deleteBtn);
+
+    container.append(title, btnContainer);
+    projectContainer.append(container);
 };
