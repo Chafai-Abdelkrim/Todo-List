@@ -216,4 +216,41 @@ const createProjectModalElements = (title) => {
     formFieldset.append(legend, labelName, inputName, labelDesc, inputDesc);
 };
 
-export { createProjectCard, createNavItem }
+const  createIcon = (iconType) => {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+
+    svg.setAttribute('width', '24px');
+    svg.setAttribute('height', '24px');
+    svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+    svg.setAttribute('viewBox', '0 0 24 24');
+
+    path.setAttribute('fill', 'currentColor');
+
+    switch (iconType) {
+        case 'delete':
+            path.setAttribute('d', 'M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z');
+            break;
+        case 'restore':
+            path.setAttribute('d', 'M13,3A9,9 0 0,0 4,12H1L4.89,15.89L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3Z');
+            break;
+        case 'edit':
+            path.setAttribute('d', 'M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z');
+            break;
+        case 'plus':
+            path.setAttribute('d', 'M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z');
+            break;
+        case 'arrow':
+            path.setAttribute('d', 'M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z');
+            break;
+        default:
+            console.log(`There is no Icon with the (${iconType}) type.`);
+            break;
+    }
+    svg.append(path);
+
+    return svg;
+};
+
+
+export { createProjectCard, createNavItem, createTodoModalElements, createProjectModalElements }
