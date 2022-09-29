@@ -14,7 +14,20 @@ const todos = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)) || [
 
 const saveTodos = () => {
     localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(todos));
-}
+};
+
+const createNewTodo = (type, title, date, isImportant) => {
+    const newTodo = {
+        type: type,
+        checked: false,
+        title: title,
+        date: date,
+        isImportant: isImportant,
+        isTrash: false,
+    };
+    todos.push(newTodo);
+    renderTodos();
+};
 
 const editTodo = (index, title, date, isImportant) => {
     const currentTodo = todos[index];
@@ -22,11 +35,11 @@ const editTodo = (index, title, date, isImportant) => {
     currentTodo.date = date;
     currentTodo.isImportant = isImportant;
     renderTodos();
-}
+};
 
 const updateStatus = (index, value) => {
     todos[index].checked = value;
-}
+};
 
 const  removeAllProjectTodos = (project) => {
     let i = todos.length;
@@ -47,6 +60,6 @@ const restoreTodo = (todo) => {
     if (typeof parseInt(todo.type) === 'number' ) {restoreProject(projects[parseInt(todo.type)])};
     todos[todo.index].isTrash = false;
     renderTodos();
-}
+};
 
 export { todos, updateStatus, editTodo, restoreTodo, removeAllProjectTodos, updateAllProjectTodos}
