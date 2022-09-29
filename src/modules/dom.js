@@ -253,4 +253,4 @@ const  createIcon = (iconType) => {
 };
 
 
-export { createProjectCard, createNavItem, createTodoModalElements, createProjectModalElements }
+export { createDiv, createH1, createH2, createH3, createPara, createBtn, createCheckbox,  createNavItem, createTodoCard, createProjectCard, createTodoModalElements, createProjectModalElements, createIcon };
