@@ -171,7 +171,49 @@ const createProjectCard = (project, index) => {
     projectContainer.append(container);
 };
 
+const createTodoModalElements = (title) => {
+    const formFieldset = document.querySelector('.modal-form-fieldset');
+    const legend = createLegend('modal-form-legend');
+    const labelName = createLabel('modal-form-title');
+    const inputName = createInput('modal-form-title', 'text');
+    const labelDate = createLabel('modal-form-date');
+    const inputDate = createInput('modal-form-date', 'date');
+    const lablePriority = createLabel('modal-form-priority')
+    const inputPriority = createInput('modal-form-priority', 'checkbox');
 
+    legend.innerText = title;
+    labelName.innerText = 'Name';
+    labelDate.innerText = 'Date';
+    lablePriority.innerText = 'Is Important?';
 
+    inputName.setAttribute('required', '');
+    inputName.setAttribute('maxLength', '150');
+    inputDate.setAttribute('required', '');
+
+    lablePriority.appendChild(inputPriority);
+
+    formFieldset.textContent = '';
+    formFieldset.append(legend, labelName, inputName, labelDate, inputDate, lablePriority);
+};
+
+const createProjectModalElements = (title) => {
+    const formFieldset = document.querySelector('.modal-form-fieldset');
+    const legend = createLegend('modal-form-legend');
+    const labelName = createLabel('modal-form-title');
+    const inputName = createInput('modal-form-title', 'text');
+    const labelDesc = createLabel('modal-form-desc');
+    const inputDesc = createTextarea('modal-form-desc');
+
+    legend.innerText = title;
+    labelName.innerText = 'Project Name';
+    labelDesc.innerText = 'Project Description';
+
+    inputName.setAttribute('required', '');
+    inputName.setAttribute('maxLength', '50');
+    inputDesc.setAttribute('maxLength', '250');
+
+    formFieldset.textContent = '';
+    formFieldset.append(legend, labelName, inputName, labelDesc, inputDesc);
+};
 
 export { createProjectCard, createNavItem }

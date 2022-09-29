@@ -48,7 +48,7 @@ const renderProjectNav = () => {
     saveProjects();
 };
 
-const renderTrashProjects = (project) => {
+const renderTrashProjects = () => {
     const projectContainer = document.querySelector('.project-container');
 
     projectContainer.textContent = '';
