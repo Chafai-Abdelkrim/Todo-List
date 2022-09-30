@@ -62,4 +62,4 @@ const restoreTodo = (todo) => {
     renderTodos();
 };
 
-export { todos, updateStatus, editTodo, restoreTodo, removeAllProjectTodos, updateAllProjectTodos}
+export { todos, updateStatus, createNewTodo, editTodo, restoreTodo, removeAllProjectTodos, updateAllProjectTodos}

@@ -14,6 +14,25 @@ const saveProjects = () => {
     localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(projects));
 }
 
+const createNewProject = (title, description) => {
+    const newProject = {
+        title: title,
+        desc: description,
+        isTrash: false,
+    }
+    projects.push(newProject);
+    renderProjectNav();
+    buildProjectPage(projects[projects.length - 1], projects[projects.length - 1].id);
+};
+
+const editProject = (project, title, description) => {
+    const currentProject = projects[project.id];
+    currentProject.title = title;
+    currentProject.desc = description;
+    renderProjectNav();
+    buildProjectPage(project, project.id);
+};
+
 const removeProject = (project, index) => {
     if (project.isTrash) {
         removeAllProjectTodos(project);
@@ -58,4 +77,4 @@ const renderTrashProjects = () => {
     saveProjects();
 }
 
-export { removeProject, restoreProject }
+export { createNewProject, removeProject, restoreProject }
