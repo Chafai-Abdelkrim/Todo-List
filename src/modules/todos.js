@@ -44,6 +44,16 @@ const updateStatus = (index, value) => {
     setTimeout(renderTodos, 2000);
 };
 
+const removeTodo = (todo) => {
+    if (todo.isTrash) {
+        todos.splice(todo.index, 1);
+        renderTodos();
+    } else {
+        todos[todo.index].isTrash = true;
+        renderTodos();
+    }
+};
+
 const  removeAllProjectTodos = (project) => {
     let i = todos.length;
     while (i--) {
@@ -74,4 +84,4 @@ const renderTodos = () => {
     saveTodos();
 };
 
-export { todos, updateStatus, createNewTodo, editTodo, restoreTodo, removeAllProjectTodos, updateAllProjectTodos}
+export { todos, updateStatus, createNewTodo, removeTodo, editTodo, restoreTodo, removeAllProjectTodos, updateAllProjectTodos}
