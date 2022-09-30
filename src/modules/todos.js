@@ -84,4 +84,30 @@ const renderTodos = () => {
     saveTodos();
 };
 
+const filterTodos = (currentPage) => {
+    const sortBtn = document.querySelector('.todo-sort');
+
+    const filteredTodos = todos.filter((todo, index) => {
+        todo.index = index;
+        switch (currentPage) {
+            case 'Today':
+                const todayTodos = todo.date === format(new Date(), 'yyyy-MM-dd') && todo.isTrash === false && todo.checked === false;
+                return todayTodos;
+            
+            default:
+                break;
+        }
+    });
+};
+
+const getDates = () => {
+    const dates = eachDayOfInterval({
+        start: addDays(new Date(), 1),
+        end: addDays(new Date(), 7),
+    });
+    dates.forEach((date, i) => dates.splice(i, 1, format(date, 'yyyy-MM-dd')));
+    return dates;
+};
+
+
 export { todos, updateStatus, createNewTodo, removeTodo, editTodo, restoreTodo, removeAllProjectTodos, updateAllProjectTodos}
