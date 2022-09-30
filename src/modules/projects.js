@@ -1,5 +1,6 @@
 import { removeAllProjectTodos, updateAllProjectTodos } from './todos';
 import { createProjectCard, createNavItem } from './dom';
+import { buildGeneral, buildProjectPage } from './build-pages';
 
 const LOCALSTORAGE_KEY = 'todolist.projects';
 const projects = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)) || [
@@ -77,4 +78,4 @@ const renderTrashProjects = () => {
     saveProjects();
 }
 
-export { createNewProject, removeProject, restoreProject }
+export { projects, createNewProject, editProject, removeProject, restoreProject };

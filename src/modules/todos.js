@@ -1,4 +1,6 @@
 import { format, compareAsc, addDays, eachDayOfInterval} from 'date-fns';
+import { createTodoCard } from './dom';
+import { projects, restoreProject } from './projects';
 
 const LOCALSTORAGE_KEY = 'todolist.todos';
 const todos = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)) || [
@@ -39,6 +41,7 @@ const editTodo = (index, title, date, isImportant) => {
 
 const updateStatus = (index, value) => {
     todos[index].checked = value;
+    setTimeout(renderTodos, 2000);
 };
 
 const  removeAllProjectTodos = (project) => {
@@ -60,6 +63,15 @@ const restoreTodo = (todo) => {
     if (typeof parseInt(todo.type) === 'number' ) {restoreProject(projects[parseInt(todo.type)])};
     todos[todo.index].isTrash = false;
     renderTodos();
+};
+
+const renderTodos = () => {
+    const currentPage = document.querySelector('.main-container').getAttribute('data-id');
+    const todoConatiner = document.querySelector('.todo-container');
+    const filteredTodos = filterTodos(currentPage);
+    todoConatiner.textContent = '';
+    filteredTodos.forEach(todo => createTodoCard(todo));
+    saveTodos();
 };
 
 export { todos, updateStatus, createNewTodo, editTodo, restoreTodo, removeAllProjectTodos, updateAllProjectTodos}
