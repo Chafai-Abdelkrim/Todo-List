@@ -78,4 +78,4 @@ const renderTrashProjects = () => {
     saveProjects();
 }
 
-export { projects, createNewProject, editProject, removeProject, restoreProject };
+export { projects, createNewProject, editProject, removeProject, restoreProject, renderTrashProjects };
