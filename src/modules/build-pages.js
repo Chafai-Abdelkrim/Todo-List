@@ -35,3 +35,42 @@ const buildInbox  = () => {
     renderTodos();
 };
 
+const buildToday = () => {
+    const nav = document.querySelector('.header');
+    const mainContainer = document.querySelector('.main-container');
+    const title = createH1('project-title');
+    const desc = createPara('project-desc');
+    const todoConatiner = createDiv('todo-conatiner');
+
+    nav.classList.remove('is-active');
+    mainContainer.classList.remove('is-active');
+    mainContainer.setAttribute('data-id', 'Today');
+
+    title.innerText = 'Today';
+    desc.innerText = 'All tasks to do today';
+
+    mainContainer.textContent = '';
+    mainContainer.append(title, desc, todoConatiner);
+
+    renderTodos()
+};
+
+const buildUpcoming = () => {
+    const nav = document.querySelector('.header');
+    const mainContainer = document.querySelector('.main-container');
+    const title = createH1('project-title');
+    const desc = createPara('project-desc');
+    const todoConatiner = createDiv('todo-conatiner');
+
+    nav.classList.remove('is-active');
+    mainContainer.classList.remove('is-active');
+    mainContainer.setAttribute('data-id', 'Upcoming');
+
+    title.innerText = 'Upcoming';
+    desc.innerText = 'All upcoming tasks to do next week';
+
+    mainContainer.textContent = '';
+    mainContainer.append(title, desc, todoConatiner);
+
+    renderTodos();
+};
