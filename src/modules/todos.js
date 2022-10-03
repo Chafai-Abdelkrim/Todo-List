@@ -93,20 +93,38 @@ const filterTodos = (currentPage) => {
             case 'Today':
                 const todayTodos = todo.date === format(new Date(), 'yyyy-MM-dd') && todo.isTrash === false && todo.checked === false;
                 return todayTodos;
-            
+            case 'Upcoming':
+                const dates = eachDayOfInterval({
+                    start: addDays(new Date(), 1),
+                    end: addDays(new Date(), 7),
+                });
+                dates.forEach((date, i) => dates.splice(i, 1, format(date, 'yyyy-MM-dd')));
+
+                const UpcomingTodos = dates.includes(todo.date) && todo.isTrash === false && todo.checked === false;
+                return UpcomingTodos;
+            case 'Completed':
+                const CompletedTodos = todo.isTrash === false && todo.checked === true;
+                return CompletedTodos;
+            case 'Trash':
+                const trashTodos = todo.isTrash === true;
+                return trashTodos;
             default:
-                break;
+                if (sortBtn && sortBtn.innerText === 'Important') {
+                    return (
+                        todo.type === currentPage &&
+                        todo.isTrash === false &&
+                        todo.isImportant === true &&
+                        todo.checked === false
+                    );
+                }
+                return todo.type === currentPage && todo.isTrash === false && todo.checked === false;
         }
     });
-};
 
-const getDates = () => {
-    const dates = eachDayOfInterval({
-        start: addDays(new Date(), 1),
-        end: addDays(new Date(), 7),
+    filteredTodos.sort((a, b) => {
+        return compareAsc(new Date(a.date), new Date(b.date));
     });
-    dates.forEach((date, i) => dates.splice(i, 1, format(date, 'yyyy-MM-dd')));
-    return dates;
+    return filteredTodos;
 };
 
 
