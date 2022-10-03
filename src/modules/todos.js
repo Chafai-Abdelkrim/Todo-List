@@ -128,4 +128,4 @@ const filterTodos = (currentPage) => {
 };
 
 
-export { todos, updateStatus, createNewTodo, removeTodo, editTodo, restoreTodo, removeAllProjectTodos, updateAllProjectTodos}
+export { todos, updateStatus, createNewTodo, removeTodo, editTodo, restoreTodo, removeAllProjectTodos, updateAllProjectTodos, renderTodos}
