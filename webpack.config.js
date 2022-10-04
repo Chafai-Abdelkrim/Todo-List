@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+    mode: 'development',
     entry: './src/index.js',
     output: {
         filename: '[name].[contenthash].js',
@@ -23,6 +24,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Todo List',
+            template: './src/template.html',
         }),
     ],
 };
