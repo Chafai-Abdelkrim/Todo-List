@@ -1,6 +1,7 @@
 import { buildCompleted, buildInbox, buildTrash, buildUpcoming } from './modules/build-pages';
 import { openProjectModal } from './modules/modal';
 import { renderProjectNav } from './modules/projects';
+import './styles.css';
 
 const addProjectNavBtn = document.querySelector('.header-nav-btn');
 const navLinks = document.querySelectorAll('.header-home-item-link');

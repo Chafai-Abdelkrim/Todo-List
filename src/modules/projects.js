@@ -1,6 +1,6 @@
 import { removeAllProjectTodos, updateAllProjectTodos } from './todos';
 import { createProjectCard, createNavItem } from './dom';
-import { buildGeneral, buildProjectPage } from './build-pages';
+import { buildInbox, buildProjectPage } from './build-pages';
 
 const LOCALSTORAGE_KEY = 'todolist.projects';
 const projects = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)) || [
@@ -43,7 +43,7 @@ const removeProject = (project, index) => {
         updateAllProjectTodos();
         project.isTrash = true;
         renderProjectNav();
-        buildGeneral();
+        buildInbox();
     }
 };
 
