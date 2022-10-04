@@ -75,7 +75,7 @@ const buildUpcoming = () => {
     renderTodos();
 };
 
-const buildComplete = () => {
+const buildCompleted = () => {
     const nav = document.querySelector('.header');
     const mainContainer = document.querySelector('.main-container');
     const title = createH1('project-title');
@@ -106,7 +106,7 @@ const buildTrash = () => {
 
     nav.classList.remove('is-active');
     mainContainer.classList.remove('is-active');
-    mainContainer.setAttribute('data-id', 'Completed');
+    mainContainer.setAttribute('data-id', 'Trash');
 
     title.innerText = 'Trash';
     desc.innerText = 'All deleted todos and projects';
@@ -177,4 +177,4 @@ const buildProjectPage = (project, index) => {
     renderTodos();
 };
 
-export { buildInbox, buildToday, buildUpcoming, buildComplete, buildTrash, buildProjectPage };
+export { buildInbox, buildToday, buildUpcoming, buildCompleted, buildTrash, buildProjectPage };
