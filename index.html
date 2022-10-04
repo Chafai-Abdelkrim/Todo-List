@@ -1,1 +1,94 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Todo List</title><meta name="viewport" content="width=device-width,initial-scale=1"><script defer="defer" src="main.5890346fbc8cada891c0.js"></script></head><body></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/format-list-checks.svg" type="image/x-icon">
+    <title>Todo List</title>
+<script defer src="main.e01c961e4acfd2656009.js"></script></head>
+<body>
+    <div class="content-container">
+        <header class="header">
+            <nav class="header-nav">
+                <h1 class="header-title">Todo List</h1>
+                <h2 class="header-nav-title">Home</h2>
+                <ul class="header-nav-list" id="home-list">
+                    <li class="header-nav-item">
+                        <a class="header-home-item-link" href="javascript:void(0);">
+                            <img src="images/inbox.svg" alt="inbox icon">
+                            Inbox
+                        </a>
+                    </li>
+                    <li class="header-nav-item">
+                        <a class="header-home-item-link" href="javascript:void(0);">
+                            <img src="images/calendar-today.svg" alt="today icon">
+                            Today
+                        </a>
+                    </li>
+                    <li class="header-nav-item">
+                        <a class="header-home-item-link" href="javascript:void(0);">
+                            <img src="images/calendar-month-outline.svg" alt="Upcoming icon">
+                            Upcoming
+                        </a>
+                    </li>
+                    <li class="header-nav-item">
+                        <a class="header-home-item-link" href="javascript:void(0);">
+                            <img src="images/check.svg" alt="check icon">
+                            Completed
+                        </a>
+                    </li>
+                    <li class="header-nav-item">
+                        <a class="header-home-item-link" href="javascript:void(0);">
+                            <img src="images/delete.svg" alt="trash icon">
+                            Trash
+                        </a>
+                    </li>
+                </ul>
+
+                <h2 class="header-nav-title">Projects</h2>
+                <ul class="header-nav-list" id="projects-list">
+                    <li class="header-project-item">
+                        <a class="header-project-item-link" href="javascript:void(0);">
+                            <img src="images/chevron-right.svg" alt="arrow right icon">
+                            Demo Project
+                        </a>
+                    </li>
+                </ul>
+                <button class="header-nav-btn">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                    </svg>
+                    Add Project
+                </button>
+            </nav>
+        </header>
+
+        <main class="main">
+            <header class="mobile-header">
+                <button class="mobile-nav-btn">
+                    <img src="images/menu.svg" alt="burger icon">
+                </button>
+                <h1 class="mobile-nav-title">Todo List</h1>
+            </header>
+            <div class="main-container"></div>
+        </main>
+
+        <div class="modal display-none">
+            <form class="modal-form">
+                <fieldset class="modal-form-fieldset"></fieldset>
+                <button class="modal-form-submit">Submit</button>
+                <button class="modal-form-close">
+                    <img src="images/close.svg" alt="close icon">
+                </button>
+            </form>
+        </div>
+
+        <footer class="footer">
+            <a class="footer-link" href="https://github.com/Chafai-Abdelkrim">Made by Abdelkrim Chafai 
+                <img src="images/github.svg" alt="github icon">
+            </a>
+        </footer>
+    </div>
+</body>
+</html>
