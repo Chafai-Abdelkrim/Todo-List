@@ -154,5 +154,27 @@ const buildProjectPage = (project, index) => {
     title.innerText = project.title;
     desc.innerText = project.desc;
 
-    
+    editProjectBtn.append(createIcon('edit'));
+    editProjectBtn.addEventListener('click', () => openEditProjectModal(project));
+    deleteProjectBtn.append(createIcon('delete'));
+    deleteProjectBtn.addEventListener('click', () => removeProject(project, index));
+
+    sortBtn.innerText = 'All';
+    sortBtn.addEventListener('click', () => {
+        sortBtn.innerText === 'All' ? (sortBtn.innerText = 'Important') : (sortBtn.innerText = 'All');
+        renderTodos();
+    });
+    createTodoBtn.append(createIcon('plus'));
+    createTodoBtn.addEventListener('click', () => openModal());
+
+    headerContainer.append(title, editProjectBtn, deleteProjectBtn);
+
+    btnContainer.append(sortBtn, createTodoBtn);
+
+    mainContainer.textContent = '';
+    mainContainer.append(headerContainer, desc, btnContainer, todoContainer);
+
+    renderTodos();
 };
+
+export { buildInbox, buildToday, buildUpcoming, buildComplete, buildTrash, buildProjectPage };
