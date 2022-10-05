@@ -1,5 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
+/*!******************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles.css ***!
+  \******************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);
+/*!**********************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles.css (1) ***!
+  \**********************************************************************/
 :root {
     --clr-dark-lava: #463f3a;
     --clr-middle-grey: #8a817c;
@@ -11,7 +16,6 @@
 body {
     font-family: 'Lato', sans-serif;
     background-color: var(--clr-pale-silver);
-    color: var(--clr-isabelline);
     margin: 0;
 }
 
@@ -42,13 +46,7 @@ img, svg {
 
 .header-nav {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 2fr 3fr;
+    
 }
 
-.header-title {
-    text-align: center;
-    font-size: 2rem;
-    color: var(--clr-pale-silver);
-}
 
