@@ -7,6 +7,7 @@ module.exports = {
     output: {
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'dist'),
+        assetModuleFilename: 'imgs/[name].[hash].[ext]',
         clean: true,
     },
     module: {
@@ -14,6 +15,10 @@ module.exports = {
             {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
+            },
+            {
+                test: /\.html$/i,
+                use: ['html-loader']
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
