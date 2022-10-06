@@ -97,7 +97,52 @@ img, svg {
     background-color: #463f3a;
     color: #f4f3ee;
     border: 2px solid var(--clr-pale-silver);
+    padding: 3px;
 }
 .header-home-item-link:hover img,  .header-home-item-link:focus img {
     filter: invert(91%) sepia(3%) saturate(673%) hue-rotate(36deg) brightness(112%) contrast(91%);
+}
+
+.nav-project-container {
+    position: relative;
+}
+
+.header-project-item-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--clr-dark-lava);
+    background-color: var(--clr-pale-silver);
+    width: 70%;
+    padding: 5px;
+    border-radius: 15px;
+    transition: .3s;
+}
+
+.header-project-item-link:hover, .header-project-item-link:focus {
+    background-color: #463f3a;
+    color: #f4f3ee;
+    border: 2px solid var(--clr-pale-silver);
+    padding: 3px;
+}
+
+.header-project-item-link:hover svg, .header-project-item-link:focus svg {
+    color: #f4f3ee;
+}
+
+.header-nav-btn {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 2.5rem;
+    background-color: var(--clr-melon);
+    border: none;
+    cursor: pointer;
+    padding: 7px;
+    color: var(--clr-dark-lava);
+    font-size: 1.3rem;
+    border-radius: 20px;
 }
