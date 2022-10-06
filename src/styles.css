@@ -19,6 +19,10 @@ body {
     display: none;
 }
 
+.mobile-header {
+    display: none;
+}
+
 img, svg {
     width: 24px;
     height: 24px;
@@ -145,4 +149,21 @@ img, svg {
     color: var(--clr-dark-lava);
     font-size: 1.3rem;
     border-radius: 20px;
+    transition: .3s ease-in-out;
+}
+
+.header-nav-btn:hover, .header-nav-btn:focus {
+    color: var(--clr-isabelline);
+    background-color: transparent;
+    border: 2px solid var(--clr-melon);
+}
+
+.main-container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto;
+    width: calc(100% - 250px);
+    height: calc(100% - 250px);
+    
 }
