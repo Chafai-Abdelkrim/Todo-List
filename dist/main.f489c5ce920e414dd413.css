@@ -1,5 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
+/*!******************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles.css ***!
+  \******************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);
+/*!**********************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles.css (1) ***!
+  \**********************************************************************/
 :root {
     --clr-dark-lava: #463f3a;
     --clr-middle-grey: #8a817c;
@@ -58,7 +63,7 @@ img, svg {
     vertical-align: middle;
     width: 2.2rem;
     height: 2.2rem;
-    background-image: url(./images/format-list-checks.svg);
+    background-image: url(imgs/format-list-checks.b11d2b03a072fc292419..svg);
     background-size: contain;
     filter: invert(87%) sepia(11%) saturate(145%) hue-rotate(359deg) brightness(85%) contrast(85%);
 }
