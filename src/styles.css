@@ -136,12 +136,17 @@ img, svg {
     color: #f4f3ee;
 }
 
+.header-nav-btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .header-nav-btn {
     display: flex;
     align-items: center;
     position: absolute;
     bottom: 1.5rem;
-    left: 2.5rem;
     background-color: var(--clr-melon);
     border: none;
     cursor: pointer;
@@ -165,5 +170,59 @@ img, svg {
     margin: auto;
     width: calc(100% - 250px);
     height: calc(100% - 250px);
-    
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    overflow: hidden;
+    color: var(--clr-dark-lava);
+}
+
+.project-title {
+    margin-left: 1rem;
+}
+
+.project-desc {
+    margin-left: 1rem;
+    font-size: 1.1rem;
+}
+
+.project-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.todo-sort {
+    margin-left: 1rem;
+    padding: 7px;
+    font-size: 1rem;
+    background-color: var(--clr-dark-lava);
+    color: var(--clr-pale-silver);
+    width: 5.1rem;
+    border-radius: 5px;
+    border: transparent;
+    transition: .3s;
+}
+
+.todo-sort:hover {
+    cursor: pointer;
+    box-shadow: 0 0 0.8rem 0 rgba(0, 0, 0, .5);
+}
+
+.todo-create {
+    margin-right: 1rem;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid var(--clr-dark-lava);
+    background-color: var(--clr-melon);
+    transition: .3s;
+}
+
+.todo-create:hover {
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid var(--clr-melon);
+    box-shadow: 0 0 0.8rem 0 rgba(0, 0, 0, .5);
 }
