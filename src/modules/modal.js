@@ -5,12 +5,6 @@ import { createNewProject, editProject } from "./projects";
 const modal = document.querySelector('.modal');
 const modalForm = document.querySelector('.modal-form');
 
-const openModal = () => {
-    createTodoModalElements('New Todo');
-    modalForm.addEventListener('submit', newTodoEvent());
-    modal.classList.remove('display-none');
-};
-
 const closeModal = document.querySelector('.modal-form-close');
 closeModal.addEventListener('click', (e) => {
     e.preventDefault();
@@ -20,6 +14,12 @@ closeModal.addEventListener('click', (e) => {
     modalForm.removeEventListener('submit', newProjectEvent);
     modalForm.removeEventListener('submit', editProjectEvent);
 });
+
+const openModal = () => {
+    createTodoModalElements('New Todo');
+    modalForm.addEventListener('submit', newTodoEvent);
+    modal.classList.remove('display-none');
+};
 
 const openEditModal = (todo) => {
     createTodoModalElements('Edit task');
