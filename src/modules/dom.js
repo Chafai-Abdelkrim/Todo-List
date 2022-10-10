@@ -1,6 +1,6 @@
 import { format, isPast, add, addDays } from "date-fns";
 import { todos, updateStatus, restoreTodo } from "./todos";
-import { openEditModal } from "./modal";
+import { openEditPopup } from "./popup";
 import { projects, removeProject, restoreProject } from "./projects";
 
 const createDiv = (className) => {
@@ -110,7 +110,7 @@ const createTodoCard = (todo) => {
     date.innerText = format(new Date(todo.date), 'dd/MM/y');
 
     editBtn.append(createIcon('edit'));
-    editBtn.addEventListener('click', () => openEditModal(todo));
+    editBtn.addEventListener('click', () => openEditPopup(todo));
 
     deleteBtn.append(createIcon('delete'));
     deleteBtn.addEventListener('click', () => removeTodo(todo));
@@ -171,15 +171,15 @@ const createProjectCard = (project, index) => {
     projectContainer.append(container);
 };
 
-const createTodoModalElements = (title) => {
-    const formFieldset = document.querySelector('.modal-form-fieldset');
-    const legend = createLegend('modal-form-legend');
-    const labelName = createLabel('modal-form-title');
-    const inputName = createInput('modal-form-title', 'text');
-    const labelDate = createLabel('modal-form-date');
-    const inputDate = createInput('modal-form-date', 'date');
-    const lablePriority = createLabel('modal-form-priority')
-    const inputPriority = createInput('modal-form-priority', 'checkbox');
+const createTodoPopupElements = (title) => {
+    const formFieldset = document.querySelector('.popup-form-fieldset');
+    const legend = createLegend('popup-form-legend');
+    const labelName = createLabel('popup-form-title');
+    const inputName = createInput('popup-form-title', 'text');
+    const labelDate = createLabel('popup-form-date');
+    const inputDate = createInput('popup-form-date', 'date');
+    const lablePriority = createLabel('popup-form-priority')
+    const inputPriority = createInput('popup-form-priority', 'checkbox');
 
     legend.innerText = title;
     labelName.innerText = 'Name';
@@ -196,13 +196,13 @@ const createTodoModalElements = (title) => {
     formFieldset.append(legend, labelName, inputName, labelDate, inputDate, lablePriority);
 };
 
-const createProjectModalElements = (title) => {
-    const formFieldset = document.querySelector('.modal-form-fieldset');
-    const legend = createLegend('modal-form-legend');
-    const labelName = createLabel('modal-form-title');
-    const inputName = createInput('modal-form-title', 'text');
-    const labelDesc = createLabel('modal-form-desc');
-    const inputDesc = createTextarea('modal-form-desc');
+const createProjectPopupElements = (title) => {
+    const formFieldset = document.querySelector('.popup-form-fieldset');
+    const legend = createLegend('popup-form-legend');
+    const labelName = createLabel('popup-form-title');
+    const inputName = createInput('popup-form-title', 'text');
+    const labelDesc = createLabel('popup-form-desc');
+    const inputDesc = createTextarea('popup-form-desc');
 
     legend.innerText = title;
     labelName.innerText = 'Project Name';
@@ -253,4 +253,4 @@ const  createIcon = (iconType) => {
 };
 
 
-export { createDiv, createH1, createH2, createH3, createPara, createBtn, createCheckbox,  createNavItem, createTodoCard, createProjectCard, createTodoModalElements, createProjectModalElements, createIcon };
+export { createDiv, createH1, createH2, createH3, createPara, createBtn, createCheckbox,  createNavItem, createTodoCard, createProjectCard, createTodoPopupElements, createProjectPopupElements, createIcon };

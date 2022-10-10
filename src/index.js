@@ -1,5 +1,5 @@
 import { buildCompleted, buildInbox, buildTrash, buildUpcoming } from './modules/build-pages';
-import { openProjectModal } from './modules/modal';
+import { openProjectPopup } from './modules/popup';
 import { renderProjectNav } from './modules/projects';
 import './styles.css';
 
@@ -8,7 +8,7 @@ const navLinks = document.querySelectorAll('.header-home-item-link');
 const mobileNavBtn = document.querySelector('.mobile-nav-btn');
 
 addProjectNavBtn.addEventListener('click', () => {
-    openProjectModal();
+    openProjectPopup();
 });
 
 mobileNavBtn.addEventListener('click', () => {

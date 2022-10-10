@@ -1,7 +1,7 @@
 import { createH1, createH3, createBtn, creatrDiv, createPara, createIcon, createDiv } from './dom';
 import { removeProject, renderTrashProjects } from './projects';
 import { renderTodos } from './todos';
-import { openEditProjectModal, openModal } from './modal';
+import { openEditProjectPopup, openPopup } from './popup';
 
 const buildInbox  = () => {
     const nav = document.querySelector('.header');
@@ -26,7 +26,7 @@ const buildInbox  = () => {
         renderTodos();
     });
     createTodoBtn.append(createIcon('plus'));
-    createTodoBtn.addEventListener('click', () => openModal());
+    createTodoBtn.addEventListener('click', () => openPopup());
     btnContainer.append(sortBtn, createTodoBtn);
 
     mainContainer.textContent = '';
@@ -155,7 +155,7 @@ const buildProjectPage = (project, index) => {
     desc.innerText = project.desc;
 
     editProjectBtn.append(createIcon('edit'));
-    editProjectBtn.addEventListener('click', () => openEditProjectModal(project));
+    editProjectBtn.addEventListener('click', () => openEditProjectPopup(project));
     deleteProjectBtn.append(createIcon('delete'));
     deleteProjectBtn.addEventListener('click', () => removeProject(project, index));
 
@@ -165,7 +165,7 @@ const buildProjectPage = (project, index) => {
         renderTodos();
     });
     createTodoBtn.append(createIcon('plus'));
-    createTodoBtn.addEventListener('click', () => openModal());
+    createTodoBtn.addEventListener('click', () => openPopup());
 
     headerContainer.append(title, editProjectBtn, deleteProjectBtn);
 
