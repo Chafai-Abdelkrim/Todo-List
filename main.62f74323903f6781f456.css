@@ -213,10 +213,14 @@ img, svg {
 
 .todo-create {
     margin-right: 1rem;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    border: 2px solid var(--clr-dark-lava);
+    display: flex;
+    place-items: center;
+    aspect-ratio: 1;
+    padding: 0.5rem;
+    line-height: 1;
+    border: none;
+    border-radius: 100vmax;
+    box-shadow: 0 0 0.4rem 0 rgba(0, 0, 0, .5);
     background-color: var(--clr-melon);
     transition: .3s;
 }
@@ -224,7 +228,6 @@ img, svg {
 .todo-create:hover {
     cursor: pointer;
     background-color: transparent;
-    border: 2px solid var(--clr-melon);
     box-shadow: 0 0 0.8rem 0 rgba(0, 0, 0, .5);
 }
 
@@ -244,6 +247,37 @@ img, svg {
     cursor: pointer;
     box-shadow: 0 0 0.8rem 0 rgba(0, 0, 0, .5);
 }
+
+.project-header-container {
+    display: grid;
+    grid-template-columns: 1fr max-content max-content;
+    gap: 1rem;
+    word-break: break-word;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.project-header-container > button {
+    display: flex;
+    place-items: center;
+    aspect-ratio: 1;
+    padding: 0.4rem;
+    border: none;
+    border-radius: 100vmax;
+    background-color: var(--clr-melon);
+    cursor: pointer;
+    line-height: 1;
+    color: var(--clr-dark-lava);
+    box-shadow: 0 0 0.4rem 0 rgba(0, 0, 0, .5);
+    transition: .3s;
+}
+
+.project-header-container > button:hover {
+    background-color: transparent;
+    box-shadow: 0 0 0.8rem 0 rgba(0, 0, 0, .5);
+}
+
+
 /* popup styling */
 .popup {
     position: absolute;
