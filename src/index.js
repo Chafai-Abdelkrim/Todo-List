@@ -1,4 +1,4 @@
-import { buildCompleted, buildInbox, buildTrash, buildUpcoming } from './modules/build-pages';
+import { buildToday, buildCompleted, buildInbox, buildTrash, buildUpcoming } from './modules/build-pages';
 import { openProjectPopup } from './modules/popup';
 import { renderProjectNav } from './modules/projects';
 import './styles.css';

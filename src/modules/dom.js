@@ -117,7 +117,7 @@ const createTodoCard = (todo) => {
 
     btnContainer.append(editBtn, deleteBtn);
 
-    if (isPast(addDays(new Date(todo.date)))) {
+    if (isPast(addDays(new Date(todo.date), 1))) {
         date.innerText = "Expired";
         date.classList.add('is-expired');
     }
