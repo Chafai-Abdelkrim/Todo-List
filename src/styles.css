@@ -272,6 +272,65 @@ img, svg {
     box-shadow: 0 0 0.8rem 0 rgba(0, 0, 0, .5);
 }
 
+.todo-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-right: -1rem;
+    overflow-y: auto;
+    overflow-y: overlay;
+}
+
+.todo-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 1rem;
+    padding: 1.2rem;
+    margin-right: 1rem;
+    background-color: rgba(244, 243, 238, 0.5);
+    border-radius: 1rem;
+}
+
+.todo-card-important {
+    position: absolute;
+    top: -11px;
+    left: 0;
+    font-size: small;
+    font-weight: 700;
+    pointer-events: none;
+    background-color: var(--clr-melon);
+    padding: 0 1rem;
+    border-radius: 1rem 0 1rem 0;
+    box-shadow: 0 0 0.3rem 0 rgba(0, 0, 0, .5);
+}
+
+.todo-card-type {
+    position: absolute;
+    top: -11px;
+    justify-self: center;
+    font-size: small;
+    font-weight: 700;
+    background-color: var(--clr-middle-grey);
+    color: var(--clr-isabelline);
+    padding: 0 1rem;
+    border-radius: 0 0 1rem 1rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 50%;
+    white-space: pre;
+    box-shadow: 0 0 0.3rem 0 rgba(0, 0, 0, .5);
+}
+
+.todo-card-input {
+    width: 1rem;
+    height: 1rem;
+    accent-color: var(--clr-melon);
+    margin-top: 1.2rem;
+}
 
 /* popup styling */
 .popup {
