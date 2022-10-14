@@ -112,6 +112,12 @@ img, svg {
     position: relative;
 }
 
+#projects-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-y: overlay;
+}
+
 .header-project-item-link {
     display: flex;
     align-items: center;
@@ -283,6 +289,7 @@ img, svg {
     gap: 1rem;
     margin-top: 1rem;
     margin-right: -1rem;
+    padding: 1rem;
     overflow-y: auto;
     overflow-y: overlay;
 }
@@ -302,7 +309,7 @@ img, svg {
 
 .todo-card-important {
     position: absolute;
-    top: -11px;
+    top: -12px;
     left: 0;
     font-size: small;
     font-weight: 700;
@@ -315,7 +322,7 @@ img, svg {
 
 .todo-card-type {
     position: absolute;
-    top: -11px;
+    top: -12px;
     justify-self: center;
     font-size: small;
     font-weight: 700;
@@ -335,6 +342,55 @@ img, svg {
     height: 1rem;
     accent-color: var(--clr-melon);
     margin-top: 1.2rem;
+}
+
+.todo-card-title {
+    margin-right: auto;
+    word-break: break-word;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.todo-card-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    line-height: 1;
+}
+
+.todo-card-date.is-expired {
+    padding: 0 1rem;
+    width: max-content;
+    border-radius: 100vmax;
+    background-color: var(--clr-melon);
+    box-shadow: 0 0 0.3rem 0 rgba(0, 0, 0, .5);
+}
+
+.todo-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.todo-card-container > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.35rem;
+    border: none;
+    border-radius: 100vmax;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--clr-dark-lava);
+    box-shadow: 0 0 0.4rem 0 rgba(0, 0, 0, .5);
+    transition: .3s;
+}
+
+.todo-card-container > button:hover {
+    background-color: var(--clr-melon);
+    box-shadow: 0 0 0.8rem 0 rgba(0, 0, 0, .5);
 }
 
 /* popup styling */
