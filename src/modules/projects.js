@@ -40,7 +40,7 @@ const removeProject = (project, index) => {
         projects.splice(index, 1);
         renderTrashProjects();
     } else {
-        updateAllProjectTodos();
+        updateAllProjectTodos(project);
         project.isTrash = true;
         renderProjectNav();
         buildInbox();

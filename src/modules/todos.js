@@ -64,7 +64,7 @@ const  removeAllProjectTodos = (project) => {
 };
 
 const updateAllProjectTodos = (project) => {
-    todos.forEach( todo => {
+    todos.forEach( (todo) => {
         if (todo.type == project.id) todo.isTrash = true;
     });
 };
