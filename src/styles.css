@@ -209,7 +209,7 @@ img, svg {
 }
 
 .project-desc {
-    margin-left: 1rem;
+    margin: 0 0 1rem 1rem;
     font-size: 1.1rem;
 }
 
@@ -241,7 +241,7 @@ img, svg {
     display: flex;
     place-items: center;
     aspect-ratio: 1;
-    padding: 0.5rem;
+    padding: 0.4rem;
     line-height: 1;
     border: none;
     border-radius: 100vmax;
@@ -302,18 +302,18 @@ img, svg {
     box-shadow: 0 0 0.8rem 0 rgba(0, 0, 0, .5);
 }
 
-.todo-container {
+.todo-container, .project-container {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     margin-top: 1rem;
-    margin-right: -1rem;
-    padding: 1rem;
+    padding-left: 1rem;
     overflow-y: auto;
     overflow-y: overlay;
+    height: 73%;
 }
 
-.todo-card {
+.todo-card, .project-card {
     position: relative;
     display: grid;
     grid-template-columns: max-content 1fr max-content;
@@ -324,6 +324,10 @@ img, svg {
     margin-right: 1rem;
     background-color: rgba(244, 243, 238, 0.5);
     border-radius: 1rem;
+}
+
+.project-card {
+    grid-template-columns: 1fr max-content;
 }
 
 .todo-card-important {
@@ -363,7 +367,7 @@ img, svg {
     margin-top: 1.2rem;
 }
 
-.todo-card-title {
+.todo-card-title, .project-card-title {
     margin-right: auto;
     word-break: break-word;
     text-overflow: ellipsis;
@@ -386,14 +390,14 @@ img, svg {
     box-shadow: 0 0 0.3rem 0 rgba(0, 0, 0, .5);
 }
 
-.todo-card-container {
+.todo-btn-container, .project-btn-container {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.7rem;
 }
 
-.todo-card-container > button {
+.todo-btn-container > button, .project-btn-container > button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -407,7 +411,8 @@ img, svg {
     transition: .3s;
 }
 
-.todo-card-container > button:hover {
+.todo-btn-container > button:hover,
+.project-btn-container > button:hover {
     background-color: var(--clr-melon);
     box-shadow: 0 0 0.8rem 0 rgba(0, 0, 0, .5);
 }

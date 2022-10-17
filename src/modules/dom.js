@@ -102,7 +102,7 @@ const createTodoCard = (todo) => {
     const date = createPara('todo-card-date');
     const editBtn = createBtn('todo-card-edit');
     const deleteBtn = createBtn('todo-card-delete');
-    const btnContainer = createDiv('todo-card-container');
+    const btnContainer = createDiv('todo-btn-container');
 
     checkbox.checked = todo.checked;
     checkbox.addEventListener('click', () => updateStatus(todo.index, checkbox.checked));
@@ -157,7 +157,7 @@ const createProjectCard = (project, index) => {
     const title = createPara('project-card-title');
     const deleteBtn = createBtn('project-card-delete');
     const restoreBtn = createBtn('project-card-restore');
-    const btnContainer = createDiv('project-card-container');
+    const btnContainer = createDiv('project-btn-container');
 
     title.innerText = project.title;
 
