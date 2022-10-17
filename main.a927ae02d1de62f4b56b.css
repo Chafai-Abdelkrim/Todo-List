@@ -553,6 +553,33 @@ img, svg {
         backdrop-filter: blur(2rem);
     }
 }
+/* footer */
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-link {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    text-decoration: none;
+    color: var(--clr-dark-lava);
+}
+
+.footer-link > img {
+    filter: invert(22%) sepia(21%) saturate(247%) hue-rotate(342deg) brightness(101%) contrast(93%);
+}
+
+.footer-link:hover {
+    color: inherit;
+}
+
+.footer-link:hover > img {
+    filter: invert(94%) sepia(20%) saturate(244%) hue-rotate(345deg) brightness(112%) contrast(91%);
+    transform: rotateY(360deg);
+    transition: .5s;
+}
 
 /* hide elemente */
 .display-none {
