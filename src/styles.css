@@ -587,18 +587,37 @@ footer {
     .todo-container, .project-container {
         height: 780px;
     }
-    /* position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    margin: auto;
-    width: calc(100% - 250px);
-    height: calc(100% - 250px);
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
-    border-radius: 25px;
-    background-color: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(15px);
-    overflow: hidden;
-    color: var(--clr-dark-lava); */
+}
+
+@media screen and (max-width: 800px) {
+    .header {
+        position: fixed;
+        top: 100px;
+        left: -250px;
+        bottom: 0;
+        z-index: 999;
+        transition: transform .3s ease-in;
+    }
+    .header.is-active {
+        transform: translateX(250px);
+    }
+    .header-title {
+        display: none;
+    }
+    .mobile-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        height: 100px;
+        padding: 1.5rem;
+        background-color: var(--clr-dark-lava);
+    }
+    .main-container {
+        position: relative;
+        height: calc(100% - 100px);
+        transition: transform .3s ease-in;
+    }
+    
 }
 
 /* hide elemente */
