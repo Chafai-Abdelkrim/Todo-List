@@ -60,6 +60,7 @@ img, svg {
     grid-row: 1 / 3;
     background-color: var(--clr-dark-lava);
     border-radius: 2rem;
+    min-width: 250px;
 }
 
 .header-nav {
@@ -310,7 +311,7 @@ img, svg {
     padding-left: 1rem;
     overflow-y: auto;
     overflow-y: overlay;
-    height: 73%;
+    height: 515px;
 }
 
 .todo-card, .project-card {
@@ -574,6 +575,30 @@ footer {
     filter: invert(94%) sepia(20%) saturate(244%) hue-rotate(345deg) brightness(112%) contrast(91%);
     transform: rotateY(360deg);
     transition: .5s;
+}
+
+/* media queries */
+
+@media screen and (max-width: 1110px) {
+    .main-container {
+        width: 100%;
+        height: 100%;
+    }
+    .todo-container, .project-container {
+        height: 780px;
+    }
+    /* position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto;
+    width: calc(100% - 250px);
+    height: calc(100% - 250px);
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    overflow: hidden;
+    color: var(--clr-dark-lava); */
 }
 
 /* hide elemente */

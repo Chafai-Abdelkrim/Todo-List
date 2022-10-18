@@ -90,6 +90,9 @@ const filterTodos = (currentPage) => {
     const filteredTodos = todos.filter((todo, index) => {
         todo.index = index;
         switch (currentPage) {
+            case 'Inbox':
+                const inboxTodos = todo.checked === false && todo.isTrash === false;
+                return inboxTodos;
             case 'Today':
                 const todayTodos = todo.date === format(new Date(), 'yyyy-MM-dd') && todo.isTrash === false && todo.checked === false;
                 return todayTodos;
