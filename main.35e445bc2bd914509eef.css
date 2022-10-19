@@ -50,6 +50,13 @@ img, svg {
     height: 24px;
 }
 
+.mobile-nav-btn {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+
+}
+
 .content-container {
     display: grid;
     grid-template-columns: 1fr 3.5fr;
@@ -614,18 +621,33 @@ footer {
         align-items: center;
         gap: 1rem;
         height: 100px;
-        padding: 1.5rem;
+        padding: 1rem;
         background-color: var(--clr-dark-lava);
+        border-radius: 1rem;
     }
     .main-container {
         position: relative;
+        top: 0px;
+        bottom: 0px;
+        transform: none;
         height: calc(100% - 100px);
         transition: transform .3s ease-in;
     }
     .main-container.is-active {
-        overflow: hidden;
         pointer-events: none;
         transform: translateX(250px);
+    }
+    .todo-container, .project-container {
+        height: 610px;
+    }
+    .content-container {
+        display: flex;
+        flex-direction: column;
+    }
+    footer {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
     }
 }
 
