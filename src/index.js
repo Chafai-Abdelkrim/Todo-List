@@ -8,6 +8,8 @@ const navLinks = document.querySelectorAll('.header-home-item-link');
 const mobileNavBtn = document.querySelector('#menu-btn');
 
 addProjectNavBtn.addEventListener('click', () => {
+    document.querySelector('.header').classList.remove('is-active');
+    document.querySelector('.main-container').classList.remove('is-active');
     openProjectPopup();
 });
 
