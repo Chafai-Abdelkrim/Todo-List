@@ -670,6 +670,15 @@ footer {
     .header.is-active {
         transform: translateX(250px);
     }
+    .mobile-header.active-menu .menu-icon .navicon {
+        background: transparent;
+    }
+    .mobile-header.active-menu .menu-icon .navicon:before {
+        transform: rotate(-45deg);
+    }
+    .mobile-header.active-menu .menu-icon .navicon:after {
+        transform: rotate(45deg);
+    }
     .header-nav-btn {
         position: fixed;
         bottom: 1.2rem;
