@@ -86,8 +86,13 @@ const renderTodos = () => {
 
 const filterTodos = (currentPage) => {
     const sortBtn = document.querySelector('.todo-sort');
-
+    
+    console.log(todos);
     const filteredTodos = todos.filter((todo, index) => {
+        function dateIsValid(date) {
+            return !Number.isNaN(new Date(date).getTime());
+        }
+        console.log(dateIsValid(todo.date));
         todo.index = index;
         switch (currentPage) {
             case 'Inbox':

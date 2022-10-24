@@ -727,6 +727,9 @@ footer {
     .mobile-nav-title {
         margin: 0;
     }
+    #projects-list {
+        max-height: 220px;
+    }
     .project-header-container {
         grid-template-columns: 1fr max-content;
         margin: 1rem;
