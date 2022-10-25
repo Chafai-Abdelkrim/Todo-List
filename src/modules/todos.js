@@ -87,17 +87,17 @@ const renderTodos = () => {
 const filterTodos = (currentPage) => {
     const sortBtn = document.querySelector('.todo-sort');
     
-    console.log(todos);
+    
     const filteredTodos = todos.filter((todo, index) => {
-        function dateIsValid(date) {
+        console.log(todos[index]);
+        /* function dateIsValid(date) {
             return !Number.isNaN(new Date(date).getTime());
         }
-        console.log(dateIsValid(todo.date));
+        console.log(dateIsValid(todo.date)); */
         todo.index = index;
         switch (currentPage) {
             case 'Inbox':
-                const inboxTodos = todo.checked === false && todo.isTrash === false;
-                return inboxTodos;
+                return todo.checked === false && todo.isTrash === false;
             case 'Today':
                 const todayTodos = todo.date === format(new Date(), 'yyyy-MM-dd') && todo.isTrash === false && todo.checked === false;
                 return todayTodos;

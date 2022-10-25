@@ -1,5 +1,5 @@
 import { format, isPast, add, addDays } from "date-fns";
-import { todos, updateStatus, restoreTodo } from "./todos";
+import { todos, updateStatus, removeTodo, restoreTodo } from "./todos";
 import { openEditPopup } from "./popup";
 import { projects, removeProject, restoreProject } from "./projects";
 
@@ -107,7 +107,13 @@ const createTodoCard = (todo) => {
     checkbox.checked = todo.checked;
     checkbox.addEventListener('click', () => updateStatus(todo.index, checkbox.checked));
     title.innerText = todo.title;
-    date.innerText = format(new Date(todo.date), 'dd/MM/y');
+
+    const dateIsValid = (date) => {
+        return !Number.isNaN(new Date(date).getTime());
+    }
+    if (dateIsValid(todo.date)) {
+        date.innerText = format(new Date(todo.date), 'dd/MM/y');
+    }
 
     editBtn.append(createIcon('edit'));
     editBtn.addEventListener('click', () => openEditPopup(todo));

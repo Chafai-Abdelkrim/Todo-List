@@ -70,9 +70,9 @@ const newTodoEvent = (e) => {
 }
 
 const editTodoEvent = (e) => {
-    const titleInput = document.querySelector('.popup-form-title-input');
-    const dateInput = document.querySelector('.popup-form-date-input');
-    const priorityInput = document.querySelector('.popup-form-priority-input');
+    const titleInput = document.querySelector('.popup-form-title-input').value;
+    const dateInput = document.querySelector('.popup-form-date-input').value;
+    const priorityInput = document.querySelector('.popup-form-priority-input').checked;
 
     e.preventDefault();
     editTodo(e.currentTarget.currentIndex, titleInput, dateInput, priorityInput);
