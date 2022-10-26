@@ -70,7 +70,7 @@ const updateAllProjectTodos = (project) => {
 };
 
 const restoreTodo = (todo) => {
-    if (typeof parseInt(todo.type) === 'number' ) {restoreProject(projects[parseInt(todo.type)])};
+    if ( !isNaN(parseInt(todo.type)) ) restoreProject(projects[parseInt(todo.type)]);
     todos[todo.index].isTrash = false;
     renderTodos();
 };
@@ -90,10 +90,7 @@ const filterTodos = (currentPage) => {
     
     const filteredTodos = todos.filter((todo, index) => {
         console.log(todos[index]);
-        /* function dateIsValid(date) {
-            return !Number.isNaN(new Date(date).getTime());
-        }
-        console.log(dateIsValid(todo.date)); */
+        
         todo.index = index;
         switch (currentPage) {
             case 'Inbox':
