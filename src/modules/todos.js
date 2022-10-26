@@ -7,7 +7,7 @@ const todos = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)) || [
     {
         type: 'Inbox',
         checked: false,
-        title: 'Welcome to the Todo List App',
+        title: 'Welcome To Your Task Todo App',
         date: '3000-01-01',
         isImportant: true,
         isTrash: false,
@@ -87,13 +87,18 @@ const renderTodos = () => {
 const filterTodos = (currentPage) => {
     const sortBtn = document.querySelector('.todo-sort');
     
-    
     const filteredTodos = todos.filter((todo, index) => {
-        console.log(todos[index]);
-        
         todo.index = index;
+
         switch (currentPage) {
             case 'Inbox':
+                if (sortBtn && sortBtn.innerText === 'Important') {
+                    return (
+                        todo.isTrash === false &&
+                        todo.isImportant === true &&
+                        todo.checked === false
+                    );
+                }
                 return todo.checked === false && todo.isTrash === false;
             case 'Today':
                 const todayTodos = todo.date === format(new Date(), 'yyyy-MM-dd') && todo.isTrash === false && todo.checked === false;

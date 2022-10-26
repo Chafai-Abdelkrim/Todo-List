@@ -25,6 +25,7 @@ const buildInbox  = () => {
         sortBtn.innerText === 'All' ? (sortBtn.innerText = 'Important') : (sortBtn.innerText = 'All');
         renderTodos();
     });
+    
     createTodoBtn.append(createIcon('plus'));
     createTodoBtn.addEventListener('click', () => openPopup());
     btnContainer.append(sortBtn, createTodoBtn);
