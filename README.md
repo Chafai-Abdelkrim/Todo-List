@@ -14,8 +14,9 @@
 
 ## 📝 Description
 My take on a Todo-List Web Application.<br>
-I builed a Task organizer to keep track of Todo Tasks with the possibility to make custom project folders.<br>
-Ability to sort todos by date and importance.
+-I builed a Task organizer to keep track of Todo Tasks with the possibility to make custom project folders.<br>
+-Ability to sort todos by date and importance.<br>
+-Todos and Projects are stored in localStorage.
 
 ## 🛠️ Built with
  * HTML5.
